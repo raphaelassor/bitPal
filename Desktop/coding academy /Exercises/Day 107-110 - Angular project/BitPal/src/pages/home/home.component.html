@@ -1,0 +1,36 @@
+<section class=" main-container">
+    <div class="home">
+        <div class="flex column">
+            <div class="balance-info lg flex column">
+                <h3>BitPal Balance</h3>
+                <span>{{user.coins |bit}}</span>
+                <i>Available</i>
+                <button>Add Money</button>
+            </div>
+            <h3>Last 7 Days</h3>
+            <div class="balance-info flex column">
+                <h3>Money Out </h3>
+                <span>{{sumPastWeekMoves|bit}}</span>
+                
+            </div>
+            <div class="balance-info flex column">
+                <h3>Money In</h3>
+                <span>{{0 |bit}}</span>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="main-chart">
+                <header>
+                    <h3>BTC/USD Market Price</h3>
+                    <span>market graph for bitcoin in the last 5 months</span>
+                </header>
+                <line-chart [data]="marketPrices" title="Bitcoin market price" [chartType]="chartType"></line-chart>
+            </div>
+            <div class="trans-wrapper">
+                <trans-list [moves]="user.moves"></trans-list>
+            </div>
+        </div>
+    </div>
+   
+</section>
+ 

@@ -1,0 +1,18 @@
+<section class="contacts-page main-container">
+    <div class="filter-wrapper flex justify-space-between">
+        <div class="flex align-center">
+            <div class="icon-xlg">
+                <img src="../../assets/svg/person.svg" alt="">
+            </div>
+            <div>
+                <h3>Contacts List</h3>
+                <span>Send money To Your contacts</span>
+            </div>
+        </div>
+        <contact-filter class="flex" [filterBy]="filterBy" (onSetFilter)="onSetFilter($event)"></contact-filter>
+    </div>
+    <div class="contact-list-wrapper ">
+        <contact-list [contacts]="contacts$|async"></contact-list>
+    </div>
+    <a routerLink="./add"> + </a>
+</section>

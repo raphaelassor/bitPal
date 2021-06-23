@@ -1,0 +1,142 @@
+/* Breakpoint mixins */
+
+@mixin for-mobile-layout {
+    @media (max-width: $mobile-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-narrow-layout {
+    @media (min-width: $mobile-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-normal-layout {
+    @media (min-width: $narrow-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-wide-layout {
+    @media (min-width: $normal-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-details-narrow-layout {
+    @media (min-width: $details-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-dashboard-narrow-layout {
+    @media (min-width: $dashboard-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-header-narrow-layout {
+    @media (max-width: $header-breakbpoint) {
+        @content;
+    }
+}
+
+/* Media  Mixins */
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    overflow: hidden;
+    &::before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+    > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    > img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+// Mixin for removing hover efects on iphone screen
+@mixin hover-supported {
+    @media not all and (pointer: coarse) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin border1 {
+    border: 1px solid $clr5;
+    box-shadow: $boxShadow;
+    border-radius: $borderRad1;
+}
+@mixin btn1 {
+    border: none;
+    border-radius: 1.5rem;
+    color: #ffffff;
+    font-weight: 500;
+    cursor: pointer;
+    line-height: 18px;
+}
+
+@mixin title1{
+    align-self: center;
+    color: #4a4a4a;
+    font-size: rem(18px);
+}
+@mixin subtitle1 {
+    font-size: rem(12px);
+    font-weight: 100;
+    color:#6c7378
+}
+
+
+
+
+
+@mixin contact-wrapper {
+    min-width: rem(550px);
+    @include border1;
+    margin: 0 auto;
+    background-color: white;
+    padding: rem(70px) rem(50px) rem(50px);
+    position: relative;
+    .nav-actions {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+    img {
+        position: absolute;
+        width: rem(100px);
+        height: rem(100px);
+        margin: 0 auto;
+        @include border1;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -50%);
+        display: block;
+        border-radius: 50%;
+        background-color: white;
+    }
+    h1,
+    input[name="name"] {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    p{
+        line-height: rem(30px);
+    }
+}

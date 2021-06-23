@@ -1,0 +1,70 @@
+@import "../../assets/styles/setup/mixins";
+@import "../../assets/styles/setup/variables";
+@import "../../assets/styles/setup/functions";
+.login-signup{
+    width:rem(475px);
+    @include border1;
+    background-color: #fff;
+    padding: rem(42px);
+    margin: rem(120px) auto 0;
+   .logo{
+       font-size: 30px;
+       font-weight: bolder;
+       color:#00457C;
+       span{
+           color: #0079C1;
+       }
+       text-align: center;
+       margin-bottom: 1.5rem;
+       font-style: italic;
+   }
+    a{
+        display:inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    button,a{
+        width: 100%;
+        height: rem(44px);
+        border: none;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: rem(15px);
+        cursor:pointer;
+        &.primary{
+            background-color: $clr4;
+            color:white
+        }
+        &.secondary{
+            background-color: #E1E7EB;
+            color: #2C2E2F;
+           
+        }
+    }
+    .break{
+        margin: 1.25rem 0;
+        color: #989696;
+        font-weight: 100;
+        hr{
+            flex-grow: 1;
+            border-color:#E1E7EB; 
+        }
+        span{
+            margin: 0 0.2rem;
+        }
+    }
+    form{
+        input{
+            height: 44px;
+            width: 100%;
+            padding: 0 10px;
+            border: 1px solid #9da3a6;
+            background: #fff;
+            text-overflow: ellipsis;
+            border-radius:4px;
+            margin-bottom:rem(20px);
+            font-size:16px;
+        }
+    }
+}

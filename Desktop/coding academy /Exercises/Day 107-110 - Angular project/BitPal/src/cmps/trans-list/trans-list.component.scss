@@ -1,0 +1,44 @@
+@import "../../assets/styles/setup/mixins";
+@import "../../assets/styles/setup/variables";
+@import "../../assets/styles/setup/functions";
+.trans-list {
+    padding: rem(18px) rem(24px);
+    @include border1;
+    background-color: #fff;
+    header {
+        margin-bottom:1rem;
+        div {
+            &.icon-xlg {
+                background-color: #018065;
+            }
+            &:last-child{
+                align-self: center;
+                h3 {
+                    @include title1
+                }
+                span{
+                   @include subtitle1
+                }
+            }
+        }
+    }
+    table {
+        tr {
+            &:nth-child(even) {
+                background-color: #fafafa;
+            }
+            td {
+                padding: rem(12px) rem(20px);
+                &:last-child {
+                    text-align: end;
+                }
+                &:first-child,
+                &:last-child {
+                    font-size: rem(15px);
+                    font-weight: 400;
+                }
+            }
+        }
+        width: 100%;
+    }
+}

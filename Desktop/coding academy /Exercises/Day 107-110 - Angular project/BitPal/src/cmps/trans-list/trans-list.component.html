@@ -1,0 +1,28 @@
+<section class="trans-list">
+    <header class="flex align-items">
+        <div class="icon-xlg">
+            <img src="../../assets/svg/activity.svg" alt="">
+        </div>
+        <div>
+            <h3> Recent activity</h3>
+            <span>BitPal Transactions</span>
+        </div>
+    </header>
+    <!-- icon like in paypal -->
+    <table>
+            <tr *ngFor="let move of moves ;index as i " >
+                    <td>
+                        {{move.at | date }}
+                    </td>
+                    <td>
+                      Payment to {{move.toName}}
+                    </td>
+                    <td>
+                        {{move.amount|bit}}
+                    </td>
+                    
+            </tr>
+    </table>
+    <div *ngIf="!moves.length"> No recent activity...</div>
+</section>
+

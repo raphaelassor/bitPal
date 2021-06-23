@@ -1,0 +1,24 @@
+<div class="contact-edit main-container">
+    <div class="contact-wrapper">
+        <img src="https://robohash.org/{{contact.name|| 100}}" alt="">
+        <form #form="ngForm" (ngSubmit)="onSaveContact(form)" class="flex column">
+            
+                <input [ngModel]="contact.name" type="text" name="name" id="name-input" placeholder="John Doe" required>
+            
+            
+            <label for="email-input">
+               <span> Email: </span>
+               <input [ngModel]="contact.email" type="email" name="email" id="email-input" placeholder="johndoe@email.com">
+            </label>
+            
+            <label for="phone-input">
+                <span>Phone : </span> 
+                <input [ngModel]="contact.phone" type="text" name="phone" id="phone-input" placeholder="+1 (XXX) XXX-XXXX">
+            </label>
+            <div class="btns-form flex justify-space-between align-center" >
+                <button type="submit"  class="primary">Save</button>
+                <span  *ngIf="isEdit" class="btn-remove" (click)="onRemoveContact()">Delete</span>
+            </div>
+        </form>
+    </div>
+</div>

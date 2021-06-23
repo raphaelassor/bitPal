@@ -1,0 +1,16 @@
+<section class="contact-details-page main-container">
+    <div class="contact-wrapper">
+        <img src="https://robohash.org/{{contact.name}}" alt="">
+        <div class="nav-actions flex justify-space-between">
+            <a routerLink="/contacts" > back to contacts </a>
+            <a routerLink="./edit">edit</a>
+        </div>
+        <div class="contact-info">
+            <h1>{{contact.name}}</h1>
+            <p>Emial:{{contact.email}}</p>
+            <p>Phone: {{contact.phone}}</p>
+        </div>
+        <transfer-funds (onSendFunds)="onSendFunds($event)" [maxAmount]="maxAmount" ></transfer-funds>
+    </div>
+    <trans-list [moves]="movesOnContact"  ></trans-list>
+</section>

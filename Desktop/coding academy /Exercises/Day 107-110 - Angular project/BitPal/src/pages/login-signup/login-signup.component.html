@@ -1,0 +1,17 @@
+
+<section class="login-signup">
+<div class="logo">Bit<span>Pal</span> </div>
+<form #form="ngForm" (ngSubmit)="onLoginSignup(form)" class="flex column">
+    <input *ngIf="!isLogin" [ngModel]="user.name" name="name" type="text" placeholder="Full name... ">
+    <input type="text" [ngModel]="user.username" name="username" placeholder="username...">
+    <input type="password" [ngModel]="user.password" name="password" placeholder="password...">
+    <button *ngIf="isLogin" class="primary">Login</button>
+    <button *ngIf="!isLogin"class="primary" >Signup</button>
+</form>
+<div *ngIf="isLogin" class="flex break">
+    <hr/>
+    <span>or</span>
+    <hr/>
+</div>
+<a *ngIf="isLogin" routerLink="/signup" class="secondary">Sign up</a>
+</section>

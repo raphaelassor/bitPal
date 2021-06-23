@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    margin : 0;
+    background-color: $clr1;
+    color:$clr2;
+    font-family: sans-serif;
+}
+
+
+
+h1,h2,h3,h4,h5,h6{
+   
+    margin: 0;
+    padding: 0;
+}
+input, textarea{
+    outline: none;
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+
+}
+::spelling-error  {
+    text-decoration: none;
+  }

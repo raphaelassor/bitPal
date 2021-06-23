@@ -1,0 +1,45 @@
+@import "../../assets/styles/setup/mixins";
+@import "../../assets/styles/setup/variables";
+@import "../../assets/styles/setup/functions";
+.contact-edit{
+    .contact-wrapper{
+        @include contact-wrapper;
+        form{
+          label{
+              span{
+                  display: inline-block;
+                  width: 70px;
+                  word-wrap:break-word ;
+              }
+          }
+            input{
+                border: none;
+                border-bottom: 1px solid $clr5;
+                max-width: rem(300px);
+                margin-bottom: 1rem;
+                padding:6px 8px;
+                &[name="name"]{
+                    grid-column: 1/-1;
+                    font-size: 20px;
+                    font-weight: 600;
+                    text-align: center;
+                    align-self: center;
+                    margin-bottom: 2rem;
+                }
+            }
+            .btns-form{
+                margin-top:2rem;
+                button{
+                        @include btn1;
+                        padding:7px 20px;
+                }
+                span{
+                    color: $clr6;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+}

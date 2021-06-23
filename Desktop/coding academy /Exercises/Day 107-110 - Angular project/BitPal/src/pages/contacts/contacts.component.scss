@@ -1,0 +1,39 @@
+@import "../../assets/styles/setup/mixins";
+@import "../../assets/styles/setup/variables";
+@import "../../assets/styles/setup/functions";
+.contacts-page{
+    &>a{
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        display: block;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color: $clr4;
+        color: white;
+        display: flex;
+        justify-content:  center;
+        align-items: center;
+        font-size: 28px;
+        font-weight: 800;
+    }
+    .filter-wrapper{
+        width: 100%;
+        .icon-xlg{
+            background-color: $clr4;
+        }
+        h3{
+            @include title1
+        }
+        span{
+            @include subtitle1
+        }
+       
+        @include border1;
+        justify-self: center;
+        padding:1rem rem(24px);
+        margin-bottom: 1.5rem;
+        background-color: #fff;
+    }
+}

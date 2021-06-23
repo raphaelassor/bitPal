@@ -1,0 +1,12 @@
+@import "../../assets/styles/setup/mixins";
+@import "../../assets/styles/setup/variables";
+@import "../../assets/styles/setup/functions";
+.contact-details-page {
+  .contact-wrapper {
+    @include contact-wrapper;
+    .contact-info {
+      margin-bottom: 2rem;
+    }
+    margin-bottom: 4rem;
+  }
+}
