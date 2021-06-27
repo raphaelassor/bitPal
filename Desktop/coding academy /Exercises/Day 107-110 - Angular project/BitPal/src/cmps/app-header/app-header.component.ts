@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { UserService } from 'src/services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppHeaderComponent implements OnInit {
 
-  constructor() { }
+  userFullName : String | null;
+  subsc:Subscription
+  constructor(private userService:UserService) { }
 
-  ngOnInit(): void {
+
+  ngOnInit() {
+    this.subsc=this.userService.user$.subscribe(user=>{
+      this.userFullName=user?.name
+    })
+  }
+  ngOnDestroy(){
+    this.subsc.unsubscribe()
   }
 
 }

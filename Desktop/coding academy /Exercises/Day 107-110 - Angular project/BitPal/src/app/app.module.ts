@@ -20,6 +20,7 @@ import { TransferFundsComponent } from '../cmps/transfer-funds/transfer-funds.co
 import { BitPipe } from './pipes/bit.pipe';
 import { LoginSignupComponent } from '../pages/login-signup/login-signup.component';
 import { AppFooterComponent } from '../cmps/app-footer/app-footer.component';
+import { ChartDataPipe } from './pipes/chart-data.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AppFooterComponent } from '../cmps/app-footer/app-footer.component';
     BitPipe,
     
     LoginSignupComponent,
-         AppFooterComponent
+         AppFooterComponent,
+         ChartDataPipe
   ],
   imports: [
     BrowserModule,

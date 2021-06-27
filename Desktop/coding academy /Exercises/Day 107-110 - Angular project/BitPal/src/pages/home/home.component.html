@@ -24,7 +24,7 @@
                     <h3>BTC/USD Market Price</h3>
                     <span>market graph for bitcoin in the last 5 months</span>
                 </header>
-                <line-chart [data]="marketPrices" title="Bitcoin market price" [chartType]="chartType"></line-chart>
+                <line-chart [data]="marketPrices| chartData" title="Bitcoin market price" [chartType]="chartType"></line-chart>
             </div>
             <div class="trans-wrapper">
                 <trans-list [moves]="user.moves"></trans-list>

@@ -8,15 +8,14 @@
     padding: rem(42px);
     margin: rem(120px) auto 0;
    .logo{
-       font-size: 30px;
-       font-weight: bolder;
-       color:#00457C;
-       span{
-           color: #0079C1;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       img{
+           object-fit: contain;
+           max-width: 50%;
        }
-       text-align: center;
        margin-bottom: 1.5rem;
-       font-style: italic;
    }
     a{
         display:inline-block;

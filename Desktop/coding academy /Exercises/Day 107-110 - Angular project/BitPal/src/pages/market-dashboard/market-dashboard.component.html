@@ -1,19 +1,19 @@
-<section class="dashboard">
-    <div class="main-chart">
+<section class="dashboard main-container">
+    <div class="chart">
         <header>
             <h3>BTC/USD Market Price</h3>
             <span>market graph for bitcoin in the last 5 months</span>
         </header>
-        <!-- <line-chart [data]="marketPrices" title="Bitcoin market price" [chartType]="chartType"></line-chart> -->
+        <line-chart [data]="marketPrices | chartData" title="Bitcoin market price" [chartType]="chartType"></line-chart>
     </div>
-    <div class="main-chart">
+    <div class="chart">
         <header>
             <h3>BTC Confirmed transatctions</h3>
             <span>daily confirmed transactions</span>
         </header>
-        <!-- <line-chart [data]="marketPrices" title="Bitcoin market price" [chartType]="chartType"></line-chart> -->
+        <line-chart [data]="transactionData.values | chartData" title="Bitcoin market price" [chartType]="chartType"></line-chart>
     </div>
-    <div class="main-chart">
+    <div class="chart">
         <header>
             <h3>BTC/USD Market Price</h3>
             <span>market graph for bitcoin in the last 5 months</span>

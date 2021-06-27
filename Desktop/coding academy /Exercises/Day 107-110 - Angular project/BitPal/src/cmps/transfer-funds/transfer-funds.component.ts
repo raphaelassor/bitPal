@@ -17,6 +17,6 @@ export class TransferFundsComponent implements OnInit {
 
 onTransfer(){
   this.onSendFunds.emit(this.amount)
-  this.amount=0;
+  this.amount=null;
 }
 }

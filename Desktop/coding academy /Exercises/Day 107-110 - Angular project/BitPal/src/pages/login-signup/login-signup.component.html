@@ -1,6 +1,8 @@
 
 <section class="login-signup">
-<div class="logo">Bit<span>Pal</span> </div>
+<div class="logo">
+    <img src="../../assets/img/bitpal.png" alt="">
+</div>
 <form #form="ngForm" (ngSubmit)="onLoginSignup(form)" class="flex column">
     <input *ngIf="!isLogin" [ngModel]="user.name" name="name" type="text" placeholder="Full name... ">
     <input type="text" [ngModel]="user.username" name="username" placeholder="username...">

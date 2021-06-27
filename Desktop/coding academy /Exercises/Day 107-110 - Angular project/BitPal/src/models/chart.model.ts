@@ -8,3 +8,7 @@ export interface Chart {
         style?:object
       
 }
+export interface DataPoint{
+        x:number
+        y:number 
+}

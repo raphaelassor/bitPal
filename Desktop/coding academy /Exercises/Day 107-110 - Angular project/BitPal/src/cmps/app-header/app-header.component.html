@@ -1,12 +1,23 @@
 <header class="app-header main-container full">
-    <nav class="flex align-center">
-        <div class="logo">LOGO</div>
-        <ul class="flex clean-list">
+    <nav class="flex align-center justify-space-between">
+        <div class="logo">
+            <img src="../../assets/img/bitpal-white.png" alt="">
+        </div>
+        <ul class="flex clean-list align-center">
             <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" > Home </a></li>
             <li><a routerLink="/contacts" routerLinkActive="active" > Contacts </a></li>
             <li><a routerLink="/stats" routerLinkActive="active" > Market </a></li>
+            <li *ngIf="userFullName" class="profile flex align-center">
+                <hr/>
+                <a class="flex align-center">
+                    <img src="../../assets/svg/profile.svg" alt="">
+                    <span>{{userFullName}}</span>
+            </a></li>
         </ul>
+        
+        
     </nav>
 </header>
 
  
+

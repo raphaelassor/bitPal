@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { map, tap } from 'rxjs/operators';
+import {of} from 'rxjs'
 @Injectable({
     providedIn: 'root'
 })
@@ -16,15 +17,23 @@ export class BitcoinService {
         //         tap(res => console.log(res)),
         //         map(res => res.values)
         //     )
-        return gMarketPrices
+        return of(gMarketPrices)
     }
     getConfirmedTransactions() {
-        return this.http.get<{ answer: string }>('https://api.blockchain.info/charts/transactions-per-second?timespan=5weeks&rollingAverage=8hours&format=json')
+        return this.http.get<{ values: Array<object> }>('https://api.blockchain.info/charts/n-transactions?timespan=5months&format=json&cors=true')
             .pipe(
-                tap(res => console.log(res)),
-                map(res => res.answer)
+                tap(res => console.log(res , 'res is ')),
+                map(res => res)
             )
     }
+    // getConfirmedTransactions() {
+    //     return this.http
+    //         .get<Array<Object>>('https://api.blockchain.info/charts/n-transactions?timespan=5months&format=json&cors=true')
+    //         .pipe(
+    //             map(res => res)
+    //         )
+    // }
+  
 
 
 }

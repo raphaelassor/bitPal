@@ -24,11 +24,9 @@ export class HomeComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
-
     this.user = await this.userService.getUser() // need to put it in an authenticator/resolver instead of getting it here 
-    this.marketPrices = this.bitcoinService.getMarketPrice()
-      .map(price => [new Date(price.x * 1000).toLocaleDateString('en-GB', { month: '2-digit', day: '2-digit' }), price.y])
-    console.log('MARKET PRICES', this.marketPrices)
+    this.marketPrices= await this.bitcoinService.getMarketPrice().toPromise()
+    
   }
 get sumPastWeekMoves(){
   const week=1000*60*60*24*7;
